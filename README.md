@@ -1,38 +1,75 @@
-# Mirror-to-GitLab Workflow Setup Guide
+# @ebarooni/dev-tools
 
-This guide outlines the steps to integrate the mirror-to-GitLab workflow into a new repository.
+This repository is a collection of tools and configurations frequently used across various projects. It centralizes and 
+streamlines the management of these tools, making them easy to consume as npm packages in any project.
 
-## Prerequisites
-Before proceeding, ensure you have the following:
+## Contents
 
-- A GitHub repository containing the code you want to mirror to GitLab.
-- Access to both GitHub and GitLab accounts.
+This monorepo contains various tools and configurations, including but not limited to:
 
-## Setup Instructions
+- ~~**ESLint Configurations**: Custom ESLint configurations for linting JavaScript and TypeScript code.~~
+- ~~**Prettier Configurations**: Custom Prettier configurations for consistent code formatting.~~
+- **Stylelint Configurations**: Custom Stylelint configurations for linting CSS, SCSS, and other style sheets.
 
-### 1. Generate GitLab Personal Access Token (PAT)
-- Navigate to GitLab > User settings > Access Tokens.
-- Generate a PAT with at least the `write_repository` scope.
+## Getting Started
 
-### 2. Add PAT as a Repository Secret
-- Go to your GitHub repository's **Settings**.
-- Navigate to **Secrets and Variables** under **Actions**.
-- Add the generated PAT as a repository secret.
-    - Name the secret `GITLAB_MIRROR_TOKEN`.
+### Prerequisites
 
-### 3. Configure Git Identity
-- Control git config name and email in your workflow YML file (lines 28-29).
-    - Update with appropriate name and email.
+Before using the packages in this monorepo, ensure the following are installed:
 
-### 4. Create GitLab Host Repository
-- Create a host repository in GitLab, ideally with the same name as your GitHub repository.
+#### [Homebrew](https://brew.sh/)
 
-### 5. Add GitLab Host Repository URL as a Repository Secret
-- Go to your GitHub repository's **Settings**.
-- Navigate to **Secrets and Variables** under **Actions**.
-- Add the host repository URL as a repository secret.
-  - Name the secret `GITLAB_REPO_URL` (example value -> "https&#58;//gitlab.com/\<USERNAME>/\<PROJECT>.git").
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-## Additional Notes
-- Ensure proper permissions and access controls are set up on both GitHub and GitLab repositories.
-- For any assistance or issues, refer to the documentation of GitHub Actions and GitLab.
+#### [nvm](https://formulae.brew.sh/formula/nvm)
+
+```bash
+brew install nvm
+```
+
+### Installation
+
+Each package from the monorepo can be installed individually via npm. Below are examples of how to install some of the packages:
+
+#### Stylelint Config
+
+```bash
+npm install @ebarooni/stylelint-config
+```
+
+## Usage
+
+### Stylelint
+
+To use the Stylelint configuration in a project, extend it in the `stylelint.config.js file:
+
+```javascript
+module.exports = {
+  extends: ['@your-username/dev-tools-stylelint-config'],
+};
+```
+
+## Contributing
+
+Contributions are welcome. If there are any suggestions, bug reports, or improvements, please open an issue or submit a pull request.
+
+### Development
+
+To set up the development environment:
+
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:ebarooni/dev-tools.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   cd dev-tools
+   npm i
+   ```
+   
+## License
+
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more details.
