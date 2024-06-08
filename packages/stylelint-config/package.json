@@ -9,14 +9,11 @@
     "scss",
     "lint"
   ],
+  "main": "index.js",
   "files": [
     "index.js",
     "README.md"
   ],
-  "type": "module",
-  "exports": {
-    ".": "./index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"
