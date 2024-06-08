@@ -8,7 +8,8 @@
     "css",
     "scss",
     "lint",
-    "config"
+    "config",
+    "shared"
   ],
   "main": "index.js",
   "files": [
