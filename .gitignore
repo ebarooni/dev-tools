@@ -1,0 +1,10 @@
+# node files
+dist
+node_modules
+
+# macOS files
+.DS_Store
+
+# IntelliJ
+*.iml
+.idea
