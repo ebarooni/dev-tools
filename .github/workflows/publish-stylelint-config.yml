@@ -21,13 +21,14 @@ jobs:
 
       - name: Publish package to npm
         run: npm publish --provenance --access public
+        id: publish
         working-directory: ./packages/stylelint-config
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_CICD }}
         continue-on-error: true
 
       - name: Check publish result
-        if: ${{ steps.npm_publish.outcome == 'failure' }}
+        if: ${{ steps.publish.conclusion == 'failure' }}
         run: |
           echo "Publish failed. This might be because the version hasn't been updated."
           exit 0
