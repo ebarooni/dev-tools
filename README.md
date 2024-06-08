@@ -1,5 +1,13 @@
 # @ebarooni/dev-tools
 
+<p align="center">
+    <img src="https://img.shields.io/maintenance/yes/2024?style=flat-square" />
+    <img src="https://img.shields.io/github/package-json/v/ebarooni/dev-tools" />
+    <br>
+    <img src="https://img.shields.io/github/commit-activity/y/ebarooni/dev-tools" />
+    <img src="https://img.shields.io/github/repo-size/ebarooni/dev-tools" />
+</p>
+
 This repository is a collection of tools and configurations frequently used across various projects. It centralizes and 
 streamlines the management of these tools, making them easy to consume as npm packages in any project.
 
