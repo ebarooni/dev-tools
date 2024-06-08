@@ -28,7 +28,7 @@ jobs:
         continue-on-error: true
 
       - name: Check publish result
-        if: ${{ steps.publish.conclusion == 'failure' }}
+        if: steps.publish.outcome == 'failure'
         run: |
           echo "Publish failed. This might be because the version hasn't been updated."
           exit 0
