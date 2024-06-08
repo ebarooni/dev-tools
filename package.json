@@ -20,5 +20,8 @@
   "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "engines": {
     "node": ">=20.11.1"
+  },
+  "devDependencies": {
+    "lerna": "^8.1.3"
   }
 }

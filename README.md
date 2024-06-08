@@ -36,19 +36,23 @@ Each package from the monorepo can be installed individually via npm. Below are 
 #### Stylelint Config
 
 ```bash
-npm install @ebarooni/stylelint-config
+npm i @ebarooni/stylelint-config
 ```
 
 ## Usage
 
 ### Stylelint
 
-To use the Stylelint configuration in a project, extend it in the `stylelint.config.js file:
+To use the Stylelint configuration in a project, extend it in the `.stylelintrc.json` file:
 
-```javascript
-module.exports = {
-  extends: ['@your-username/dev-tools-stylelint-config'],
-};
+```json
+{
+   "overrides": [
+      {
+         "extends": ["@ebarooni/stylelint-config"]
+      }
+   ]
+}
 ```
 
 ## Contributing
