@@ -16,7 +16,7 @@ streamlines the management of these tools, making them easy to consume as npm pa
 This monorepo contains various tools and configurations, including but not limited to:
 
 - ~~**ESLint Configurations**: Custom ESLint configurations for linting JavaScript and TypeScript code.~~
-- ~~**Prettier Configurations**: Custom Prettier configurations for consistent code formatting.~~
+- **Prettier Configurations**: Custom Prettier configurations for consistent code formatting.
 - **Stylelint Configurations**: Custom Stylelint configurations for linting CSS, SCSS, and other style sheets.
 
 ## Getting Started
@@ -41,13 +41,31 @@ brew install nvm
 
 Each package from the monorepo can be installed individually via npm. Below are examples of how to install some of the packages:
 
+#### Prettier Config
+
+```bash
+npm i -D @ebarooni/prettier-config
+```
+
 #### Stylelint Config
 
 ```bash
-npm i @ebarooni/stylelint-config
+npm i -D @ebarooni/stylelint-config
 ```
 
 ## Usage
+
+### Prettier
+
+To use the configuration in a project, reference the module in your `package.json`:
+
+```json
+{
+  "name": "my-cool-library",
+  "version": "9000.0.1",
+  "prettier": "@ebarooni/prettier-config"
+}
+```
 
 ### Stylelint
 

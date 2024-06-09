@@ -2,18 +2,19 @@
   "name": "@ebarooni/dev-tools",
   "version": "0.0.1",
   "description": "Shared development tools for setting up web projects",
-  "keywords": [
-    "stylelint",
-    "stylelint-config",
-    "scss",
-    "monorepo"
-  ],
-  "author": "Ehsan Barooni",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"
   },
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "scss",
+    "monorepo",
+    "prettier"
+  ],
+  "author": "Ehsan Barooni",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ebarooni/dev-tools/issues"
   },
