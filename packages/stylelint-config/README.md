@@ -7,7 +7,7 @@ This package provides custom Stylelint configurations for linting CSS, SCSS, and
 The peer dependencies might need to be installed separately. To install the peer dependencies run the following command:
 
 ```bash
-npm i -D postcss prettier stylelint stylelint-prettier stylelint-config-standard-scss
+npm i -D postcss stylelint stylelint-prettier stylelint-config-standard-scss
 ```
 
 ## Installation

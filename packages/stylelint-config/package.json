@@ -1,16 +1,7 @@
 {
   "name": "@ebarooni/stylelint-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The standard shareable config for Stylelint",
-  "keywords": [
-    "stylelint",
-    "prettier",
-    "css",
-    "scss",
-    "lint",
-    "config",
-    "shared"
-  ],
   "main": "index.js",
   "files": [
     "index.js",
@@ -20,6 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"
   },
+  "keywords": [
+    "stylelint",
+    "prettier",
+    "css",
+    "scss",
+    "lint",
+    "config",
+    "shared"
+  ],
   "author": "Ehsan Barooni",
   "license": "MIT",
   "bugs": {
@@ -28,7 +28,6 @@
   "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "peerDependencies": {
     "postcss": "^8.4.38",
-    "prettier": "^3.3.1",
     "stylelint": "^16.6.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-prettier": "^5.0.0"
