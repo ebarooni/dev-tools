@@ -30,6 +30,19 @@ To use the configuration in a project, reference the module in your `package.jso
 }
 ```
 
+### Scripts
+
+The following helper scripts can be added to `package.json`:
+
+```json
+{
+  "scripts": {
+    "prettier:check": "npx prettier . --check",
+    "prettier:fix": "npx prettier . --write"
+  } 
+}
+```
+
 ### Extending
 
 To extend the configuration or overwrite some properties from the shared configuration, import the file in a `.prettierrc.js` 
