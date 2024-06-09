@@ -1,12 +1,18 @@
 {
   "name": "@ebarooni/stylelint-config",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The standard shareable config for Stylelint",
   "main": "index.js",
+  "type": "module",
   "files": [
     "index.js",
-    "README.md"
+    "README.md",
+    "LICENSE.txt"
   ],
+  "scripts": {
+    "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
+    "postpublish": "rm -rf ./LICENSE.txt"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"

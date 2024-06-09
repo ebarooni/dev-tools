@@ -1,8 +1,8 @@
-'use strict';
-
-module.exports = {
+const ebarooniStylelintConfig = {
     extends: [
         "stylelint-config-standard-scss",
-        "stylelint-prettier/recommended"
+        "stylelint-prettier/recommended",
     ],
 };
+
+export default ebarooniStylelintConfig;
