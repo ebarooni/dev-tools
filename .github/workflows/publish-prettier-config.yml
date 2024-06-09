@@ -1,0 +1,34 @@
+name: Publish @ebarooni/prettier-config to npm
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publish package to npm
+        run: npm publish --provenance --access public
+        id: publish
+        working-directory: ./packages/prettier-config
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_CICD }}
+        continue-on-error: true
+
+      - name: Check publish result
+        if: steps.publish.outcome == 'failure'
+        run: |
+          echo "Publish failed. This might be because the version hasn't been updated."
+          exit 0

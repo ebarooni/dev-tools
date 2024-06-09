@@ -7,8 +7,12 @@
   "files": [
     "index.js",
     "README.md",
-    "../../LICENSE.txt"
+    "LICENSE.txt"
   ],
+  "scripts": {
+    "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
+    "postpublish": "rm -rf ./LICENSE.txt"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"
