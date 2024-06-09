@@ -1,0 +1,35 @@
+{
+  "name": "@ebarooni/prettier-config",
+  "version": "1.0.0",
+  "description": "The standard shareable config for Prettier",
+  "main": "index.js",
+  "type": "module",
+  "files": [
+    "index.js",
+    "README.md",
+    "../../LICENSE.txt"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebarooni/dev-tools.git"
+  },
+  "keywords": [
+    "prettier",
+    "config",
+    "formatter",
+    "linter",
+    "shared",
+    "html",
+    "angular",
+    "markdown"
+  ],
+  "author": "Ehsan Barooni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ebarooni/dev-tools/issues"
+  },
+  "homepage": "https://github.com/ebarooni/dev-tools#readme",
+  "peerDependencies": {
+    "prettier": "^3.3.1"
+  }
+}
