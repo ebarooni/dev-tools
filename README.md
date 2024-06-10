@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/github/repo-size/ebarooni/dev-tools" />
 </p>
 
-This repository is a collection of tools and configurations frequently used across various projects. It centralizes and 
+This repository is a collection of tools and configurations frequently used across various projects. It centralizes and
 streamlines the management of these tools, making them easy to consume as npm packages in any project.
 
 ## Contents
@@ -73,11 +73,7 @@ To use the Stylelint configuration in a project, extend it in the `.stylelintrc.
 
 ```json
 {
-   "overrides": [
-      {
-         "extends": ["@ebarooni/stylelint-config"]
-      }
-   ]
+  "extends": ["@ebarooni/stylelint-config"]
 }
 ```
 
@@ -90,6 +86,7 @@ Contributions are welcome. If there are any suggestions, bug reports, or improve
 To set up the development environment:
 
 1. Clone the repository:
+
    ```bash
    git clone git@github.com:ebarooni/dev-tools.git
    ```
@@ -99,7 +96,7 @@ To set up the development environment:
    cd dev-tools
    npm i
    ```
-   
+
 ## License
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more details.
