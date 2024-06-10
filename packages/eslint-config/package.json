@@ -1,17 +1,17 @@
 {
   "name": "@ebarooni/eslint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The standard shareable config for ESLint",
   "main": "index.js",
   "type": "module",
   "exports": {
     ".": "./index.js",
-    "./ts": "./typescript-esling-config.js",
+    "./ts": "./typescript-eslint-config.js",
     "./angular": "./angular-eslint-config.js"
   },
   "files": [
     "index.js",
-    "typescript-esling-config.js",
+    "typescript-eslint-config.js",
     "angular-eslint-config.js",
     "README.md",
     "LICENSE.txt"
