@@ -1,6 +1,6 @@
 {
   "name": "@ebarooni/stylelint-config",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "The standard shareable config for Stylelint",
   "main": "index.js",
   "type": "module",
