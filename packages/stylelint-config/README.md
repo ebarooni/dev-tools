@@ -12,7 +12,7 @@ npm i -D postcss stylelint stylelint-prettier stylelint-config-standard-scss
 
 ## Installation
 
-To install the Stylelint configuration package, run the following command:
+To install the package, run the following command:
 
 ```bash
 npm i -D @ebarooni/stylelint-config
@@ -24,11 +24,7 @@ To use the configuration in a project, extend it in the `.stylelintrc.json` file
 
 ```json
 {
-   "overrides": [
-      {
-         "extends": ["@ebarooni/stylelint-config"]
-      }
-   ]
+  "extends": ["@ebarooni/stylelint-config"]
 }
 ```
 
@@ -41,7 +37,7 @@ The following helper scripts can be added to `package.json`:
   "scripts": {
     "lint:style": "npx stylelint \"**/*.(css|scss)\"",
     "fmt:style": "npx stylelint \"**/*.(css|scss)\" --fix"
-  } 
+  }
 }
 ```
 
@@ -53,9 +49,7 @@ The following helper scripts can be added to `package.json`:
 
 ```json
 {
-  "ignoreFiles": [
-    "example/(ios|android)/**/*.(css|scss)"
-  ],
+  "ignoreFiles": ["example/(ios|android)/**/*.(css|scss)"],
   "overrides": [
     {
       "files": ["example/**/*.(css|scss)"],
