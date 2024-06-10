@@ -34,6 +34,7 @@
   "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "peerDependencies": {
     "postcss": "^8.4.38",
+    "prettier": "^3.3.1",
     "stylelint": "^16.6.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-prettier": "^5.0.0"
