@@ -12,7 +12,7 @@ npm i -D prettier
 
 ## Installation
 
-To install the Stylelint configuration package, run the following command:
+To install the package, run the following command:
 
 ```bash
 npm i -D @ebarooni/prettier-config
@@ -39,21 +39,21 @@ The following helper scripts can be added to `package.json`:
   "scripts": {
     "prettier:check": "npx prettier . --check",
     "prettier:fix": "npx prettier . --write"
-  } 
+  }
 }
 ```
 
 ### Extending
 
-To extend the configuration or overwrite some properties from the shared configuration, import the file in a `.prettierrc.js` 
+To extend the configuration or overwrite some properties from the shared configuration, import the file in a `.prettierrc.js`
 file and export the modifications, e.g:
 
 ```js
 import ebarooniPrettierConfig from "@ebarooni/prettier-config";
 
 export default {
-...ebarooniPrettierConfig,
-semi: false,
+  ...ebarooniPrettierConfig,
+  semi: false,
 };
 ```
 
