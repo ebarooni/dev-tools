@@ -7,7 +7,7 @@ This package provides custom ESLint configurations for formatting Javascript and
 The peer dependencies might need to be installed separately. To install the peer dependencies run the following command:
 
 ```bash
-npm i -D eslint @eslint/js @types/eslint__js typescript-eslint angular-eslint prettier eslint-plugin-prettier eslint-config-prettier
+npm i -D eslint @eslint/js @types/eslint__js typescript typescript-eslint angular-eslint prettier eslint-plugin-prettier eslint-config-prettier
 ```
 
 ## Installation
