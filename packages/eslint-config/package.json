@@ -8,8 +8,8 @@
       "require": "./js/index.js"
     },
     "./ts": {
-      "import": "./js/index.mjs",
-      "require": "./js/index.js"
+      "import": "./ts/index.mjs",
+      "require": "./ts/index.js"
     }
   },
   "files": [
