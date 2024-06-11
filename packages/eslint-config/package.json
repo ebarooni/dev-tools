@@ -1,6 +1,6 @@
 {
   "name": "@ebarooni/eslint-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The standard shareable config for ESLint",
   "type": "module",
   "exports": {
