@@ -2,20 +2,19 @@
   "name": "@ebarooni/eslint-config",
   "version": "0.0.4",
   "description": "The standard shareable config for ESLint",
-  "type": "module",
   "exports": {
-    "./esm": {
-      "js": "./esm/js/index.js",
-      "ts": "./esm/ts/index.js"
+    "./js": {
+      "import": "./js/index.mjs",
+      "require": "./js/index.js"
     },
-    "./cjs": {
-      "js": "./cjs/js/index.js",
-      "ts": "./esm/ts/index.js"
+    "./ts": {
+      "import": "./js/index.mjs",
+      "require": "./js/index.js"
     }
   },
   "files": [
-    "cjs/**",
-    "esm/**",
+    "js/**",
+    "ts/**",
     "README.md",
     "LICENSE.txt"
   ],

@@ -22,10 +22,32 @@ npm i -D @ebarooni/eslint-config
 
 To use the configuration in a project, reference the module in your `eslint.config.js`:
 
+### Base and recommended configs
+
+#### ESM
+
 ```js
-import ebarooniBaseESLintConfig from "@ebarooni/eslint-config";
+//  eslint.config.js or eslint.config.mjs
+
+import eb from "@ebarooni/eslint-config/js";
 
 export default {
-  ...ebarooniBaseESLintConfig,
+  ...eb.configs.base, // Or ...eb.configs.recommended
+  files: ["*.js", "*.mjs", "*.jsx"],
+  ignores: ["*.html"],
+};
+```
+
+#### CommonJS
+
+```js
+//  eslint.config.js
+
+import eb from "@ebarooni/eslint-config/js";
+
+module.exports = {
+  ...eb.configs.base, // Or ...eb.configs.recommended
+  files: ["*.js", "*.mjs", "*.jsx"],
+  ignores: ["*.html"],
 };
 ```
