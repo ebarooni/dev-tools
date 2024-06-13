@@ -38,6 +38,8 @@ To use the configuration in a project, reference the module in your `eslint.conf
 
 - #### ESM
 
+  In `package.json`:
+
   ```json
   {
     "name": "my-cool-library",
@@ -75,6 +77,8 @@ To use the configuration in a project, reference the module in your `eslint.conf
 ### Typescript config
 
 - #### ESM
+
+  In `package.json`:
 
   ```json
   {
@@ -116,6 +120,48 @@ To use the configuration in a project, reference the module in your `eslint.conf
     languageOptions: {
       parserOptions: {
         project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  });
+  ```
+
+### Angular configs
+
+- #### ESM
+
+  ```js
+  // eslint.config.js or eslint.config.mjs
+
+  // @ts-check
+
+  import eb from "@ebarooni/eslint-config/angular-strict";
+  import tseslint from "typescript-eslint";
+
+  export default tseslint.config(...eb, {
+    languageOptions: {
+      parserOptions: {
+        project: ["**/tsconfig*.json"],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  });
+  ```
+
+- #### CommonJS
+
+  ```js
+  // eslint.config.js
+
+  // @ts-check
+
+  const eb = require("@ebarooni/eslint-config/angular-strict");
+  const tseslint = require("typescript-eslint");
+
+  module.exports = tseslint.config(...eb, {
+    languageOptions: {
+      parserOptions: {
+        project: ["**/tsconfig*.json"],
         tsconfigRootDir: import.meta.dirname,
       },
     },

@@ -10,11 +10,28 @@
     "./ts": {
       "import": "./ts/index.mjs",
       "require": "./ts/index.js"
+    },
+    "./angular-recommended": {
+      "import": "./angular-recommended/index.mjs",
+      "require": "./angular-recommended/index.js"
+    },
+    "./angular-recommended-type-checked": {
+      "import": "./angular-recommended-type-checked/index.mjs",
+      "require": "./angular-recommended-type-checked/index.js"
+    },
+    "./angular-strict": {
+      "import": "./angular-strict/index.mjs",
+      "require": "./angular-strict/index.js"
+    },
+    "./angular-strict-type-checked": {
+      "import": "./angular-strict-type-checked/index.mjs",
+      "require": "./angular-strict-type-checked/index.js"
     }
   },
   "files": [
     "js/**",
     "ts/**",
+    "angular-*/**",
     "README.md",
     "LICENSE.txt"
   ],
@@ -35,7 +52,8 @@
     "javascript",
     "typescript",
     "html",
-    "angular"
+    "angular",
+    "typescript-eslint"
   ],
   "author": "Ehsan Barooni",
   "license": "MIT",
