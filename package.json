@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Shared development tools for setting up web projects",
   "scripts": {
+    "lint:js": "npx eslint *.js",
     "prettier:check": "npx prettier . --check",
     "prettier:fix": "npx prettier . --write",
     "lint:style": "npx stylelint \"**/*.(css|scss)\"",
