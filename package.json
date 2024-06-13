@@ -17,7 +17,9 @@
     "stylelint-config",
     "scss",
     "monorepo",
-    "prettier"
+    "prettier",
+    "eslint",
+    "eslint-config"
   ],
   "author": "Ehsan Barooni",
   "license": "MIT",
@@ -30,6 +32,7 @@
   },
   "prettier": "@ebarooni/prettier-config",
   "devDependencies": {
+    "@ebarooni/eslint-config": "file:packages/eslint-config",
     "@ebarooni/prettier-config": "file:packages/prettier-config",
     "@ebarooni/stylelint-config": "file:packages/stylelint-config"
   }

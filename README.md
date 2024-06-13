@@ -15,7 +15,14 @@ streamlines the management of these tools, making them easy to consume as npm pa
 
 This monorepo contains various tools and configurations, including but not limited to:
 
-- ~~**ESLint Configurations**: Custom ESLint configurations for linting JavaScript and TypeScript code.~~
+- **ESLint Configurations**: Custom ESLint configurations for linting JavaScript and TypeScript code.
+  - _**JavaScript**_: `@ebarooni/eslint-config/js`
+  - _**TypeScript**_: `@ebarooni/eslint-config/ts`
+  - _**Angular**_:
+    - Recommended: `@ebarooni/eslint-config/angular-recommended`
+    - Recommended Type Checked: `@ebarooni/eslint-config/angular-recommended-type-checked`
+    - Strict: `@ebarooni/eslint-config/angular-strict`
+    - Strict Type Checked: `@ebarooni/eslint-config/angular-strict-type-checked`
 - **Prettier Configurations**: Custom Prettier configurations for consistent code formatting.
 - **Stylelint Configurations**: Custom Stylelint configurations for linting CSS, SCSS, and other style sheets.
 
@@ -41,19 +48,45 @@ brew install nvm
 
 Each package from the monorepo can be installed individually via npm. Below are examples of how to install some of the packages:
 
-#### Prettier Config
+#### [ESLint Config](packages/eslint-config/README.md)
+
+```bash
+npm i-D @ebarooni/eslint-config
+```
+
+#### [Prettier Config](packages/prettier-config/README.md)
 
 ```bash
 npm i -D @ebarooni/prettier-config
 ```
 
-#### Stylelint Config
+#### [Stylelint Config](packages/stylelint-config/README.md)
 
 ```bash
 npm i -D @ebarooni/stylelint-config
 ```
 
 ## Usage
+
+### ESLint
+
+```js
+// eslint.config.js or eslint.config.mjs
+
+// @ts-check
+
+import eb from "@ebarooni/eslint-config/angular-strict";
+import tseslint from "typescript-eslint";
+
+export default tseslint.config(...eb, {
+  languageOptions: {
+    parserOptions: {
+      project: ["**/tsconfig*.json"],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+});
+```
 
 ### Prettier
 
