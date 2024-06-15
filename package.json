@@ -7,7 +7,10 @@
     "prettier:check": "npx prettier . --check",
     "prettier:fix": "npx prettier . --write",
     "lint:style": "npx stylelint \"**/*.(css|scss)\"",
-    "fmt:style": "npx stylelint \"**/*.(css|scss)\" --fix"
+    "fmt:style": "npx stylelint \"**/*.(css|scss)\" --fix",
+    "swiftlint": "node-swiftlint",
+    "lint:swift": "npm run swiftlint -- lint",
+    "fmt:swift": "npm run swiftlint -- --fix --format"
   },
   "repository": {
     "type": "git",
@@ -20,7 +23,9 @@
     "monorepo",
     "prettier",
     "eslint",
-    "eslint-config"
+    "eslint-config",
+    "swiftlint",
+    "swiftlint-config"
   ],
   "author": "Ehsan Barooni",
   "license": "MIT",
@@ -32,9 +37,11 @@
     "node": ">=20.11.1"
   },
   "prettier": "@ebarooni/prettier-config",
+  "swiftlint": "@ebarooni/swiftlint-config",
   "devDependencies": {
     "@ebarooni/eslint-config": "file:packages/eslint-config",
     "@ebarooni/prettier-config": "file:packages/prettier-config",
-    "@ebarooni/stylelint-config": "file:packages/stylelint-config"
+    "@ebarooni/stylelint-config": "file:packages/stylelint-config",
+    "@ebarooni/swiftlint-config": "file:packages/swiftlint-config"
   }
 }

@@ -25,6 +25,7 @@ This monorepo contains various tools and configurations, including but not limit
     - Strict Type Checked: `@ebarooni/eslint-config/angular-strict-type-checked`
 - **Prettier Configurations**: Custom Prettier configurations for consistent code formatting.
 - **Stylelint Configurations**: Custom Stylelint configurations for linting CSS, SCSS, and other style sheets.
+- **SwiftLint Configuration**: Custom SwiftLint configuration for linting and formatting swift files.
 
 ## Getting Started
 
@@ -64,6 +65,12 @@ npm i -D @ebarooni/prettier-config
 
 ```bash
 npm i -D @ebarooni/stylelint-config
+```
+
+#### [SwiftLint Config](packages/swiftlint-config/README.md)
+
+```bash
+npm i -D @ebarooni/swiftlint-config
 ```
 
 ## Usage
@@ -107,6 +114,18 @@ To use the Stylelint configuration in a project, extend it in the `.stylelintrc.
 ```json
 {
   "extends": ["@ebarooni/stylelint-config"]
+}
+```
+
+### SwiftLint
+
+To use the configuration in a project, reference the module in your `package.json`:
+
+```json
+{
+  "name": "my-cool-library",
+  "version": "9000.0.1",
+  "swiftlint": "@ebarooni/swiftlint-config"
 }
 ```
 
