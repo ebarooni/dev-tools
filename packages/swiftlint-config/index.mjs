@@ -1,5 +1,5 @@
 export default {
-  excluded: ["node_modules", "ios/Pods"],
+  excluded: ["**/node_modules", "**/ios/Pods"],
   opt_in_rules: [
     "implicitly_unwrapped_optional",
     "file_name_no_space",
