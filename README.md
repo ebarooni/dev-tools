@@ -119,14 +119,13 @@ To use the Stylelint configuration in a project, extend it in the `.stylelintrc.
 
 ### SwiftLint
 
-To use the configuration in a project, reference the module in your `package.json`:
+To use the configuration in a project, create a `swiftlint.config.js` file:
 
-```json
-{
-  "name": "my-cool-library",
-  "version": "9000.0.1",
-  "swiftlint": "@ebarooni/swiftlint-config"
-}
+```js
+module.exports = {
+  ...require("@ebarooni/swiftlint-config"),
+  included: ["${PWD}/ios"],
+};
 ```
 
 ## Contributing

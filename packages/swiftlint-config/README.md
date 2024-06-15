@@ -36,14 +36,14 @@ npm i -D @ebarooni/swiftlint-config
 
 ## Usage
 
-To use the configuration in a project, reference the module in your `package.json`:
+To use the configuration in a project, create a `swiftlint.config.js` file:
 
-```json
-{
-  "name": "my-cool-library",
-  "version": "9000.0.1",
-  "swiftlint": "@ebarooni/swiftlint-config"
-}
+```js
+module.exports = {
+  ...require("@ebarooni/swiftlint-config"),
+  included: ["${PWD}/ios"],
+  excluded: ["${PWD}/node_modules", "${PWD}/ios/Pods"],
+};
 ```
 
 ### Scripts
