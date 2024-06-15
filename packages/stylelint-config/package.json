@@ -1,11 +1,14 @@
 {
   "name": "@ebarooni/stylelint-config",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "The standard shareable config for Stylelint",
-  "main": "index.js",
-  "type": "module",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
+  },
   "files": [
     "index.js",
+    "index.mjs",
     "README.md",
     "LICENSE.txt"
   ],
