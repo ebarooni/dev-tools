@@ -37,7 +37,6 @@
     "node": ">=20.11.1"
   },
   "prettier": "@ebarooni/prettier-config",
-  "swiftlint": "@ebarooni/swiftlint-config",
   "devDependencies": {
     "@ebarooni/eslint-config": "file:packages/eslint-config",
     "@ebarooni/prettier-config": "file:packages/prettier-config",
