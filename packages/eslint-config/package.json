@@ -1,6 +1,6 @@
 {
   "name": "@ebarooni/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The standard shareable config for ESLint",
   "exports": {
     "./js": {
