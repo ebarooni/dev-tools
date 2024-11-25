@@ -1,17 +1,12 @@
 {
   "name": "@ebarooni/stylelint-config",
-  "version": "1.1.0",
-  "description": "The standard shareable config for Stylelint",
+  "version": "1.2.0",
+  "description": "A standard shareable config for Stylelint",
   "exports": {
     "import": "./index.mjs",
     "require": "./index.js"
   },
-  "files": [
-    "index.js",
-    "index.mjs",
-    "README.md",
-    "LICENSE.txt"
-  ],
+  "files": ["index.js", "index.mjs", "README.md", "LICENSE.txt"],
   "scripts": {
     "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
     "postpublish": "rm -rf ./LICENSE.txt"
@@ -36,11 +31,9 @@
   },
   "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "peerDependencies": {
-    "postcss": "^8.4.38",
-    "prettier": "^3.3.1",
-    "stylelint": "^16.6.1",
-    "stylelint-config-standard-scss": "^13.1.0",
-    "stylelint-prettier": "^5.0.0"
+    "postcss": "^8.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0"
   },
   "peerDependenciesMeta": {
     "postcss": {

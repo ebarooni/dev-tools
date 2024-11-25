@@ -1,17 +1,12 @@
 {
   "name": "@ebarooni/swiftlint-config",
   "version": "1.1.0",
-  "description": "The standard shareable config for SwiftLint",
+  "description": "A standard shareable config for SwiftLint",
   "exports": {
     "import": "./index.mjs",
     "require": "./index.js"
   },
-  "files": [
-    "index.js",
-    "index.mjs",
-    "README.md",
-    "LICENSE.txt"
-  ],
+  "files": ["index.js", "index.mjs", "README.md", "LICENSE.txt"],
   "scripts": {
     "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
     "postpublish": "rm -rf ./LICENSE.txt"
@@ -20,13 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"
   },
-  "keywords": [
-    "swiftlint",
-    "config",
-    "swift-lint-config",
-    "shared",
-    "swift"
-  ],
+  "keywords": ["swiftlint", "config", "swift-lint-config", "shared", "swift"],
   "author": "Ehsan Barooni",
   "license": "MIT",
   "bugs": {
@@ -34,6 +23,6 @@
   },
   "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "peerDependencies": {
-    "swiftlint": "^1.0.2"
+    "swiftlint": "^1.0.0"
   }
 }

@@ -12,5 +12,17 @@ module.exports = {
         parser: "markdown",
       },
     },
+    {
+      files: "*.json",
+      options: {
+        parser: "json",
+      },
+    },
+    {
+      files: "*.yml",
+      options: {
+        parser: "yaml",
+      },
+    },
   ],
 };
