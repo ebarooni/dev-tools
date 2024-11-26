@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "peerDependencies": {
-    "swiftlint": "^1.0.0"
+    "swiftlint": "^2.0.0"
   }
 }

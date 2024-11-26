@@ -1,7 +1,7 @@
 {
   "name": "@ebarooni/eslint-config",
-  "version": "1.0.1",
-  "description": "The standard shareable config for ESLint",
+  "version": "1.1.0",
+  "description": "A standard shareable config for ESLint",
   "exports": {
     "./js": {
       "import": "./js/index.mjs",
@@ -28,13 +28,7 @@
       "require": "./angular-strict-type-checked/index.js"
     }
   },
-  "files": [
-    "js/**",
-    "ts/**",
-    "angular-*/**",
-    "README.md",
-    "LICENSE.txt"
-  ],
+  "files": ["js/**", "ts/**", "angular-*/**", "README.md", "LICENSE.txt"],
   "scripts": {
     "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
     "postpublish": "rm -rf ./LICENSE.txt"
@@ -61,14 +55,15 @@
     "url": "https://github.com/ebarooni/dev-tools/issues"
   },
   "homepage": "https://github.com/ebarooni/dev-tools#readme",
+  "dependencies": {
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "^5.0.0"
+  },
   "peerDependencies": {
-    "@eslint/js": "^9.4.0",
-    "@types/eslint__js": "^8.42.3",
-    "angular-eslint": "^18.0.1",
-    "eslint": "^9.4.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.3.1",
+    "@eslint/js": "^9.0.0",
+    "angular-eslint": "^18.0.0 || ^19.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
     "typescript": "*",
     "typescript-eslint": "^8.0.0"
   },
@@ -77,9 +72,6 @@
       "optional": true
     },
     "typescript-eslint": {
-      "optional": true
-    },
-    "@types/eslint__js": {
       "optional": true
     },
     "typescript": {
