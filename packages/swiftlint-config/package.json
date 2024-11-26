@@ -1,6 +1,6 @@
 {
   "name": "@ebarooni/swiftlint-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A standard shareable config for SwiftLint",
   "exports": {
     "import": "./index.mjs",
