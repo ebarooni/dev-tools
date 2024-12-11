@@ -7,7 +7,7 @@ const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommen
 
 module.exports = tseslint.config(
   {
-    files: ["*.ts"],
+    files: ["**/*.ts"],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.strictTypeChecked,

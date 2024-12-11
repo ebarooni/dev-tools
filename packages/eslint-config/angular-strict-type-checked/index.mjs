@@ -7,7 +7,7 @@ import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 
 export default tseslint.config(
   {
-    files: ["*.ts"],
+    files: ["**/*.ts"],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.strictTypeChecked,
