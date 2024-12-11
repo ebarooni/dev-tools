@@ -16,6 +16,9 @@ export default tseslint.config(
       eslintPluginPrettierRecommended,
     ],
     processor: angular.processInlineTemplates,
+    rules: {
+      curly: "error",
+    },
   },
   {
     files: ["**/*.html"],
