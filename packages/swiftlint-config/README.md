@@ -1,72 +1,100 @@
-# @ebarooni/swiftlint-config
+# **@ebarooni/swiftlint-config**
 
-This package provides custom SwiftLint configurations for linting and formatting swift files.
+A **shareable SwiftLint configuration** for enforcing Swift style guidelines and maintaining code consistency.
 
-## Prerequisites
+---
 
-1. Install [SwiftLint](https://github.com/realm/SwiftLint)
+## **📌 Prerequisites**
 
-   ```bash
-   brew install swiftlint
-   ```
+### **1️⃣ Install SwiftLint**
 
-2. The peer dependencies might need to be installed separately. To install the peer dependencies run the following command:
+Ensure you have `swiftLint` installed on your system:
 
-   ```bash
-   npm i -D swiftlint
-   ```
-
-3. Add a script to your project's `package.json`:
-
-   ```json
-   {
-     "scripts": {
-       "swiftlint": "node-swiftlint"
-     }
-   }
-   ```
-
-## Installation
-
-To install the package, run the following command:
-
-```bash
-npm i -D @ebarooni/swiftlint-config
+```sh
+brew install swiftlint
 ```
 
-## Usage
+### **2️⃣ Install Peer Dependencies**
 
-To use the configuration in a project, create a `swiftlint.config.js` file:
+Since `swiftLint` runs as an external tool, install the necessary peer dependencies:
+
+```sh
+npm install -D swiftlint
+```
+
+### **3️⃣ Add SwiftLint to Your Scripts**
+
+To streamline usage, add the following script to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "swiftlint": "node-swiftlint"
+  }
+}
+```
+
+---
+
+## **📥 Installation**
+
+To install the shared SwiftLint configuration, run:
+
+```sh
+npm install -D @ebarooni/swiftlint-config
+```
+
+---
+
+## **🚀 Usage**
+
+### **Basic Configuration**
+
+To apply this SwiftLint configuration in your project, create a `swiftlint.config.js` file in the project root:
 
 ```js
 module.exports = {
   ...require("@ebarooni/swiftlint-config"),
   included: ["${PWD}/ios"],
-  excluded: ["${PWD}/node_modules", "${PWD}/ios/Pods"],
+  excluded: ["${PWD}/node_modules`, `${PWD}/ios/Pods"],
 };
 ```
 
-### Scripts
+---
 
-The following helper scripts can be added to `package.json`:
+## **📜 Helper Scripts**
+
+For convenience, add these **linting and formatting commands** to your `package.json` scripts:
 
 ```json
 {
   "scripts": {
-    "lint:swift": "npm run swiftlint -- lint",
-    "fmt:swift": "npm run swiftlint -- --fix --format"
+    "swiftlint:check": "npm run swiftlint -- lint",
+    "swiftlint:fix": "npm run swiftlint -- --fix --format"
   }
 }
 ```
 
-### Extending
+- **Check Swift code for issues:**
 
-To extend the configuration or overwrite some properties from the shared configuration, import the file in a `swiftlint.config.js`
-file and export the modifications, e.g:
+  ```sh
+  npm run swiftlint:check
+  ```
+
+- **Fix and format Swift code automatically:**
+  ```sh
+  npm run swiftlint:fix
+  ```
+
+---
+
+## **🛠 Extending the Configuration**
+
+If you need to **customize the rules**, create a `swiftlint.config.js` file and override specific properties:
 
 ```js
 module.exports = {
   ...require("@ebarooni/swiftlint-config"),
-  // override options here
+  // Override rules here
 };
 ```

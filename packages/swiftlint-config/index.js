@@ -1,4 +1,10 @@
 module.exports = {
+  excluded: [
+    "${PWD}/node_modules",
+    "${PWD}/ios/Pods",
+    "${PWD}/example-app",
+    "${PWD}/example-app",
+  ],
   opt_in_rules: [
     "implicitly_unwrapped_optional",
     "file_name_no_space",
