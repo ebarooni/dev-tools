@@ -1,8 +1,12 @@
 name: Publish @ebarooni/stylelint-config to npm
+
 on:
   push:
     branches:
       - main
+    paths:
+      - "packages/stylelint-config/**"
+
 jobs:
   publish:
     runs-on: ubuntu-latest

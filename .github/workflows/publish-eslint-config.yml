@@ -1,8 +1,12 @@
-name: Publish @ebarooni/eslint-config to npm
+name: Publish eslint-config to NPM
+
 on:
   push:
     branches:
       - main
+    paths:
+      - "packages/eslint-config/**"
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -12,23 +16,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: 'true'
+          sparse-checkout: packages/eslint-config
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.x"
-          registry-url: "https://registry.npmjs.org"
+          node-version-file: .nvmrc
 
-      - name: Publish package to npm
+      - name: Publish to NPM
         run: npm publish --provenance --access public
-        id: publish
         working-directory: ./packages/eslint-config
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_CICD }}
-        continue-on-error: true
-
-      - name: Check publish result
-        if: steps.publish.outcome == 'failure'
-        run: |
-          echo "Publish failed. This might be because the version hasn't been updated."
-          exit 0
