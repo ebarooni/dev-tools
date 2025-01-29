@@ -1,4 +1,4 @@
-name: Publish @ebarooni/stylelint-config to npm
+name: Publish stylelint-config to NPM
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - "packages/stylelint-config/**"
+
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -16,23 +18,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: 'true'
+          sparse-checkout: packages/stylelint-config
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.x"
+          node-version-file: .nvmrc
           registry-url: "https://registry.npmjs.org"
 
-      - name: Publish package to npm
+      - name: Publish to NPM
         run: npm publish --provenance --access public
-        id: publish
         working-directory: ./packages/stylelint-config
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_CICD }}
-        continue-on-error: true
-
-      - name: Check publish result
-        if: steps.publish.outcome == 'failure'
-        run: |
-          echo "Publish failed. This might be because the version hasn't been updated."
-          exit 0

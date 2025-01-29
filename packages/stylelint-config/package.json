@@ -1,43 +1,47 @@
 {
   "name": "@ebarooni/stylelint-config",
-  "version": "1.2.0",
-  "description": "A standard shareable config for Stylelint",
-  "exports": {
-    "import": "./index.mjs",
-    "require": "./index.js"
-  },
-  "files": ["index.js", "index.mjs", "README.md", "LICENSE.txt"],
-  "scripts": {
-    "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
-    "postpublish": "rm -rf ./LICENSE.txt"
-  },
+  "version": "1.3.0",
+  "description": "A shareable Stylelint configuration for CSS, SCSS, and web projects",
+  "license": "MIT",
+  "author": "Ehsan Barooni",
+  "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"
   },
+  "bugs": {
+    "url": "https://github.com/ebarooni/dev-tools/issues"
+  },
   "keywords": [
     "stylelint",
-    "prettier",
     "css",
     "scss",
     "lint",
     "config",
     "shared"
   ],
-  "author": "Ehsan Barooni",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ebarooni/dev-tools/issues"
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
   },
-  "homepage": "https://github.com/ebarooni/dev-tools#readme",
+  "files": [
+    "index.js",
+    "index.mjs"
+  ],
   "peerDependencies": {
-    "postcss": "^8.0.0",
-    "stylelint": "^16.0.0",
-    "stylelint-config-standard-scss": "^13.0.0"
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard-scss": "^14.0.0"
   },
   "peerDependenciesMeta": {
     "postcss": {
       "optional": true
     }
+  },
+  "engines": {
+    "node": ">=20.12.2"
+  },
+  "scripts": {
+    "prepublishOnly": "cp ../../LICENSE.txt . || echo 'License file not found, skipping copy'",
+    "postpublish": "rm -f LICENSE.txt"
   }
 }

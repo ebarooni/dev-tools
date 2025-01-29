@@ -1,26 +1,32 @@
-# @ebarooni/stylelint-config
+# **@ebarooni/stylelint-config**
 
-This package provides custom Stylelint configurations for linting CSS, SCSS, and other style sheets.
+A **shareable Stylelint configuration** for enforcing best practices in **CSS, SCSS, and other style sheets**.
 
-## Prerequisites
+---
 
-The peer dependencies might need to be installed separately. To install the peer dependencies run the following command:
+## **📌 Prerequisites**
 
-```bash
-npm i -D postcss stylelint stylelint-config-standard-scss
+Ensure the required peer dependencies are installed before using this package:
+
+```sh
+npm install -D stylelint stylelint-config-standard-scss
 ```
 
-## Installation
+---
 
-To install the package, run the following command:
+## **📥 Installation**
 
-```bash
-npm i -D @ebarooni/stylelint-config
+To install the package, run:
+
+```sh
+npm install -D @ebarooni/stylelint-config
 ```
 
-## Usage
+---
 
-To use the configuration in a project, extend it in the `.stylelintrc.json` file:
+## **🚀 Usage**
+
+Extend this configuration in your **`.stylelintrc.json`** file:
 
 ```json
 {
@@ -28,31 +34,54 @@ To use the configuration in a project, extend it in the `.stylelintrc.json` file
 }
 ```
 
-### Scripts
+### **🔧 Linting & Auto-Fixing Scripts**
 
-The following helper scripts can be added to `package.json`:
+Add these scripts to your `package.json` for **linting and fixing style files**:
 
 ```json
 {
   "scripts": {
-    "lint:style": "npx stylelint \"**/*.(css|scss)\"",
-    "fmt:style": "npx stylelint \"**/*.(css|scss)\" --fix"
+    "stylelint": "npx stylelint",
+    "stylelint:check": "npm run stylelint -- \"**/*.{css,scss}\"",
+    "stylelint:fix": "npm run stylelint -- \"**/*.{css,scss}\" --fix"
   }
 }
 ```
 
-### Example
+- **Check for style errors:**
+  ```sh
+  npm run stylelint:check
+  ```
+- **Automatically fix style issues:**
+  ```sh
+  npm run stylelint:fix
+  ```
 
-- `ignoreFiles`: A pattern to ignore the files in a specific directory.
-- `overrides`: In case different configurations are wanted for different directories.
-- `overrides.files`: The directories that should apply the extended configuration.
+---
+
+## **📜 Advanced Configuration**
+
+This package supports **custom overrides** and **ignored files** based on project structure.
+
+### **📍 Ignoring Specific Files**
+
+You can exclude specific directories or files by adding an `ignoreFiles` field:
 
 ```json
 {
-  "ignoreFiles": ["example/(ios|android)/**/*.(css|scss)"],
+  "ignoreFiles": ["example/(ios|android)/**/*.{css,scss}"]
+}
+```
+
+### **📍 Directory-Specific Overrides**
+
+If you need different rules for specific directories, use the `overrides` field:
+
+```json
+{
   "overrides": [
     {
-      "files": ["example/**/*.(css|scss)"],
+      "files": ["example/**/*.{css,scss}"],
       "extends": ["@ebarooni/stylelint-config"]
     }
   ]
