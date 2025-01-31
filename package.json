@@ -1,43 +1,40 @@
 {
   "name": "@ebarooni/dev-tools",
   "version": "1.0.0",
-  "description": "Shared development tools for setting up web projects",
-  "scripts": {
-    "lint:js": "npx eslint *.js",
-    "fmt:js": "npx eslint *.js --fix",
-    "prettier:check": "npx prettier . --check",
-    "prettier:fix": "npx prettier . --write",
-    "lint:style": "npx stylelint \"**/*.(css|scss)\"",
-    "fmt:style": "npx stylelint \"**/*.(css|scss)\" --fix",
-    "swiftlint": "node-swiftlint",
-    "lint:swift": "npm run swiftlint -- lint",
-    "fmt:swift": "npm run swiftlint -- --fix --format"
-  },
+  "description": "A monorepo for shared linting, formatting, and development configurations",
+  "license": "MIT",
+  "author": "Ehsan Barooni",
+  "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"
   },
-  "keywords": [
-    "stylelint",
-    "stylelint-config",
-    "scss",
-    "monorepo",
-    "prettier",
-    "eslint",
-    "eslint-config",
-    "swiftlint",
-    "swiftlint-config"
-  ],
-  "author": "Ehsan Barooni",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ebarooni/dev-tools/issues"
   },
-  "homepage": "https://github.com/ebarooni/dev-tools#readme",
+  "keywords": [
+    "monorepo",
+    "linting",
+    "formatting",
+    "eslint",
+    "prettier",
+    "stylelint",
+    "swiftlint",
+    "typescript",
+    "shared-config"
+  ],
   "engines": {
-    "node": ">=20.11.1"
+    "node": ">=20.12.2"
   },
   "prettier": "@ebarooni/prettier-config",
+  "scripts": {
+    "prettier": "npx prettier",
+    "prettier:check": "npm run prettier -- . --check",
+    "prettier:fix": "npm run prettier -- . --write",
+    "eslint": "npx eslint",
+    "eslint:check": "npm run eslint -- .",
+    "eslint:fix": "npm run eslint -- . --fix"
+  },
   "devDependencies": {
     "@ebarooni/eslint-config": "file:packages/eslint-config",
     "@ebarooni/prettier-config": "file:packages/prettier-config",
