@@ -5,6 +5,13 @@ module.exports = {
     "${PWD}/example-app",
     "${PWD}/example-app",
   ],
+  line_length: {
+    ignores_comments: true,
+    ignores_function_declarations: true,
+    ignores_interpolated_strings: true,
+    ignores_urls: true,
+    warning: 150,
+  },
   opt_in_rules: [
     "implicitly_unwrapped_optional",
     "file_name_no_space",
@@ -16,11 +23,4 @@ module.exports = {
     "unowned_variable_capture",
     "unused_import",
   ],
-  line_length: {
-    warning: 150,
-    ignores_function_declarations: true,
-    ignores_comments: true,
-    ignores_interpolated_strings: true,
-    ignores_urls: true,
-  },
 };
