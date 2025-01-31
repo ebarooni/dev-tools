@@ -1,81 +1,66 @@
 {
   "name": "@ebarooni/eslint-config",
-  "version": "1.1.1",
-  "description": "A standard shareable config for ESLint",
-  "exports": {
-    "./js": {
-      "import": "./js/index.mjs",
-      "require": "./js/index.js"
-    },
-    "./ts": {
-      "import": "./ts/index.mjs",
-      "require": "./ts/index.js"
-    },
-    "./angular-recommended": {
-      "import": "./angular-recommended/index.mjs",
-      "require": "./angular-recommended/index.js"
-    },
-    "./angular-recommended-type-checked": {
-      "import": "./angular-recommended-type-checked/index.mjs",
-      "require": "./angular-recommended-type-checked/index.js"
-    },
-    "./angular-strict": {
-      "import": "./angular-strict/index.mjs",
-      "require": "./angular-strict/index.js"
-    },
-    "./angular-strict-type-checked": {
-      "import": "./angular-strict-type-checked/index.mjs",
-      "require": "./angular-strict-type-checked/index.js"
-    }
-  },
-  "files": ["js/**", "ts/**", "angular-*/**", "README.md", "LICENSE.txt"],
-  "scripts": {
-    "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
-    "postpublish": "rm -rf ./LICENSE.txt"
-  },
+  "version": "1.2.0",
+  "description": "A shareable ESLint configuration for JavaScript, TypeScript, and Angular projects",
+  "license": "MIT",
+  "author": "Ehsan Barooni",
+  "homepage": "https://github.com/ebarooni/dev-tools#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebarooni/dev-tools.git"
   },
-  "keywords": [
-    "eslint",
-    "config",
-    "eslint-config",
-    "linter",
-    "shared",
-    "javascript",
-    "typescript",
-    "html",
-    "angular",
-    "typescript-eslint"
-  ],
-  "author": "Ehsan Barooni",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ebarooni/dev-tools/issues"
   },
-  "homepage": "https://github.com/ebarooni/dev-tools#readme",
-  "dependencies": {
-    "eslint-config-prettier": "*",
-    "eslint-plugin-prettier": "^5.0.0"
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "linting",
+    "typescript",
+    "angular"
+  ],
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
   },
+  "files": [
+    "index.js",
+    "index.mjs",
+    "configs/**"
+  ],
   "peerDependencies": {
-    "@eslint/js": "^9.0.0",
-    "angular-eslint": "^18.0.0 || ^19.0.0",
-    "eslint": "^9.0.0",
-    "prettier": "^3.0.0",
+    "@eslint/js": "^9.19.0",
+    "@eslint/json": "^0.10.0",
+    "@eslint/markdown": "^6.2.2",
+    "angular-eslint": "^18.0.0 || ^19.0.2",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-promise": "^7.2.1",
     "typescript": "*",
-    "typescript-eslint": "^8.0.0"
+    "typescript-eslint": "^8.22.0"
   },
   "peerDependenciesMeta": {
-    "angular-eslint": {
+    "@eslint/json": {
       "optional": true
     },
-    "typescript-eslint": {
+    "@eslint/markdown": {
+      "optional": true
+    },
+    "angular-eslint": {
       "optional": true
     },
     "typescript": {
       "optional": true
+    },
+    "typescript-eslint": {
+      "optional": true
     }
+  },
+  "engines": {
+    "node": ">=20.12.2"
+  },
+  "scripts": {
+    "prepublishOnly": "cp ../../LICENSE . || echo 'License file not found, skipping copy'",
+    "postpublish": "rm -f LICENSE"
   }
 }
