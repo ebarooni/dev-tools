@@ -1,10 +1,10 @@
-# **@ebarooni/stylelint-config**
+# @ebarooni/stylelint-config
 
-A **shareable Stylelint configuration** for enforcing best practices in **CSS, SCSS, and other style sheets**.
+A shareable Stylelint configuration for enforcing best practices in CSS, SCSS, and other style sheets.
 
 ---
 
-## **📌 Prerequisites**
+## Prerequisites
 
 Ensure the required peer dependencies are installed before using this package:
 
@@ -14,7 +14,7 @@ npm install -D stylelint stylelint-config-standard-scss
 
 ---
 
-## **📥 Installation**
+## Installation
 
 To install the package, run:
 
@@ -24,9 +24,9 @@ npm install -D @ebarooni/stylelint-config
 
 ---
 
-## **🚀 Usage**
+## Usage
 
-Extend this configuration in your **`.stylelintrc.json`** file:
+Extend this configuration in your `.stylelintrc.json` file:
 
 ```json
 {
@@ -34,9 +34,11 @@ Extend this configuration in your **`.stylelintrc.json`** file:
 }
 ```
 
-### **🔧 Linting & Auto-Fixing Scripts**
+---
 
-Add these scripts to your `package.json` for **linting and fixing style files**:
+## Linting & Auto-Fixing Scripts
+
+To simplify linting and fixing style files, add these scripts to your `package.json`:
 
 ```json
 {
@@ -47,6 +49,8 @@ Add these scripts to your `package.json` for **linting and fixing style files**:
   }
 }
 ```
+
+Run these commands:
 
 - **Check for style errors:**
   ```sh
@@ -59,13 +63,13 @@ Add these scripts to your `package.json` for **linting and fixing style files**:
 
 ---
 
-## **📜 Advanced Configuration**
+## Custom Configuration
 
-This package supports **custom overrides** and **ignored files** based on project structure.
+This package supports custom rules, ignored files, and directory-specific overrides.
 
-### **📍 Ignoring Specific Files**
+### Ignoring Specific Files
 
-You can exclude specific directories or files by adding an `ignoreFiles` field:
+To exclude certain files or directories, use the `ignoreFiles` field:
 
 ```json
 {
@@ -73,7 +77,7 @@ You can exclude specific directories or files by adding an `ignoreFiles` field:
 }
 ```
 
-### **📍 Directory-Specific Overrides**
+### Directory-Specific Overrides
 
 If you need different rules for specific directories, use the `overrides` field:
 

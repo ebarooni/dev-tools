@@ -1,16 +1,18 @@
 # @ebarooni/eslint-config
 
-This package provides custom ESLint configurations for formatting Javascript and various web-focused languages.
+A shareable and extensible ESLint configuration for JavaScript, TypeScript, Angular, Markdown, and JSON projects.
+
+---
 
 ## Prerequisites
 
-The peer dependencies might need to be installed separately. To install the peer dependencies run the following command:
+Ensure the required peer dependencies are installed:
 
-```bash
-npm i -D eslint @eslint/js typescript typescript-eslint angular-eslint prettier eslint-plugin-prettier
+```sh
+npm install -D eslint @eslint/js @eslint/markdown @eslint/json typescript typescript-eslint angular-eslint eslint-config-prettier eslint-plugin-promise
 ```
 
-If applicable, create a `tsconfig.eslint.json` file with the following content:
+For TypeScript projects, consider creating a `tsconfig.eslint.json` file to prevent issues with project-wide type checking:
 
 ```json
 {
@@ -22,148 +24,241 @@ If applicable, create a `tsconfig.eslint.json` file with the following content:
 }
 ```
 
+---
+
 ## Installation
 
-To install the package, run the following command:
+To install the ESLint configuration package, run:
 
-```bash
-npm i -D @ebarooni/eslint-config
+```sh
+npm install -D @ebarooni/eslint-config
 ```
+
+---
 
 ## Usage
 
-To use the configuration in a project, reference the module in your `eslint.config.js`:
+### JavaScript ESLint Configuration
 
-### Base and recommended configs
+For JavaScript projects that don’t use TypeScript:
 
-- #### ESM
+#### ESM Setup
 
-  In `package.json`:
+Ensure `"type": "module"` is set in `package.json`:
 
-  ```json
-  {
-    "name": "my-cool-library",
-    "version": "9000.0.1",
-    "type": "module"
+```json
+{
+  "name": "my-project",
+  "type": "module"
+}
+```
+
+Then, create `eslint.config.js` or `eslint.config.mjs`:
+
+```js
+import eb from "@ebarooni/eslint-config";
+
+export default {
+  ...eb.configs.javascript,
+  files: ["*.js", "*.mjs"],
+  ignores: ["*.html"],
+};
+```
+
+#### CommonJS Setup
+
+```js
+const eb = require("@ebarooni/eslint-config");
+
+module.exports = {
+  ...eb.configs.javascript,
+  files: ["*.js", "*.mjs"],
+  ignores: ["*.html"],
+};
+```
+
+---
+
+### TypeScript ESLint Configuration
+
+For TypeScript projects, extending the **JavaScript configuration**.
+
+#### ESM Setup
+
+```js
+// @ts-check
+import eb from "@ebarooni/eslint-config";
+import tseslint from "typescript-eslint";
+
+export default tseslint.config(...eb.configs.typescript, {
+  languageOptions: {
+    parserOptions: {
+      project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+});
+```
+
+#### CommonJS Setup
+
+```js
+// @ts-check
+const eb = require("@ebarooni/eslint-config");
+const tseslint = require("typescript-eslint");
+
+module.exports = tseslint.config(...eb.configs.typescript, {
+  languageOptions: {
+    parserOptions: {
+      project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+});
+```
+
+---
+
+### Angular ESLint Configuration
+
+For Angular projects, extending the **TypeScript configuration**.
+
+#### ESM Setup
+
+```js
+// @ts-check
+import eb from "@ebarooni/eslint-config";
+import tseslint from "typescript-eslint";
+
+export default tseslint.config(...eb.configs.angular, {
+  languageOptions: {
+    parserOptions: {
+      project: ["**/tsconfig*.json"],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+});
+```
+
+#### CommonJS Setup
+
+```js
+// @ts-check
+const eb = require("@ebarooni/eslint-config");
+const tseslint = require("typescript-eslint");
+
+module.exports = tseslint.config(...eb.configs.angular, {
+  languageOptions: {
+    parserOptions: {
+      project: ["**/tsconfig*.json"],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+});
+```
+
+---
+
+### Markdown ESLint Configuration
+
+To enable linting for Markdown files:
+
+```js
+import eb from "@ebarooni/eslint-config";
+
+export default {
+  ...eb.configs.markdown,
+  files: ["*.md"],
+};
+```
+
+---
+
+### JSON ESLint Configuration
+
+To enable linting for JSON files:
+
+```js
+import eb from "@ebarooni/eslint-config";
+
+export default {
+  ...eb.configs.json,
+  files: ["*.json"],
+};
+```
+
+---
+
+## Helper Scripts
+
+To simplify linting and fixing errors, add these scripts to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "eslint": "npx eslint",
+    "eslint:check": "npm run eslint -- .",
+    "eslint:fix": "npm run eslint . --fix"
   }
+}
+```
+
+Run these commands:
+
+- **Check for linting issues:**
+  ```sh
+  npm run eslint:check
+  ```
+- **Automatically fix linting errors:**
+  ```sh
+  npm run eslint:fix
   ```
 
-  ```js
-  // eslint.config.js or eslint.config.mjs
+---
 
-  import eb from "@ebarooni/eslint-config/js";
+## Customizing the Configuration
 
-  export default {
-    ...eb.configs.base, // Or ...eb.configs.recommended
-    files: ["*.js", "*.mjs", "*.jsx"],
-    ignores: ["*.html"],
-  };
-  ```
+This ESLint config is extensible, allowing you to customize it for your project.
 
-- #### CommonJS
+### Custom Rules
 
-  ```js
-  // eslint.config.js
+To override specific rules, extend the configuration in `eslint.config.js`:
 
-  const eb = require("@ebarooni/eslint-config/js");
+```js
+import eb from "@ebarooni/eslint-config";
 
-  module.exports = {
-    ...eb.configs.base, // Or ...eb.configs.recommended
-    files: ["*.js", "*.mjs", "*.jsx"],
-    ignores: ["*.html"],
-  };
-  ```
+export default {
+  ...eb.configs.typescript,
+  rules: {
+    "no-console": "off",
+    indent: ["error", 4],
+  },
+};
+```
 
-### Typescript config
+### Directory-Specific Rules
 
-- #### ESM
+If you want different rules per directory:
 
-  In `package.json`:
+```js
+import eb from "@ebarooni/eslint-config";
 
-  ```json
+export default [
   {
-    "name": "my-cool-library",
-    "version": "9000.0.1",
-    "type": "module"
-  }
-  ```
-
-  ```js
-  // eslint.config.js or eslint.config.mjs
-
-  // @ts-check
-
-  import eb from "@ebarooni/eslint-config/ts";
-  import tseslint from "typescript-eslint";
-
-  export default tseslint.config(...eb, {
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  });
-  ```
-
-- #### CommonJS
-
-  ```js
-  // eslint.config.js
-
-  // @ts-check
-
-  const eb = require("@ebarooni/eslint-config/ts");
-  const tseslint = require("typescript-eslint");
-
-  module.exports = tseslint.config(...eb, {
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  });
-  ```
-
-### Angular configs
-
-- #### ESM
-
-  ```js
-  // eslint.config.js or eslint.config.mjs
-
-  // @ts-check
-
-  import eb from "@ebarooni/eslint-config/angular-strict";
-  import tseslint from "typescript-eslint";
-
-  export default tseslint.config(...eb, {
-    languageOptions: {
-      parserOptions: {
-        project: ["**/tsconfig*.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  });
-  ```
-
-- #### CommonJS
-
-  ```js
-  // eslint.config.js
-
-  // @ts-check
-
-  const eb = require("@ebarooni/eslint-config/angular-strict");
-  const tseslint = require("typescript-eslint");
-
-  module.exports = tseslint.config(...eb, {
-    languageOptions: {
-      parserOptions: {
-        project: ["**/tsconfig*.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  });
-  ```
+    ...eb.configs.javascript,
+    files: ["src/**/*.js"],
+  },
+  {
+    ...eb.configs.typescript,
+    files: ["src/**/*.ts"],
+  },
+  {
+    ...eb.configs.markdown,
+    files: ["docs/**/*.md"],
+  },
+  {
+    ...eb.configs.json,
+    files: ["config/**/*.json"],
+  },
+];
+```

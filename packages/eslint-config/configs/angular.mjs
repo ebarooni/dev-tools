@@ -1,31 +1,35 @@
 // @ts-check
 
-import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
 import angular from "angular-eslint";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import eslintConfigPrettier from "eslint-config-prettier";
+import tseslint from "typescript-eslint";
+import typescript from "./typescript.mjs";
 
 export default tseslint.config(
   {
-    files: ["**/*.ts"],
     extends: [
-      eslint.configs.recommended,
+      ...typescript,
       ...tseslint.configs.strictTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       ...angular.configs.tsRecommended,
-      eslintPluginPrettierRecommended,
+      eslintConfigPrettier,
     ],
+    files: ["**/*.ts"],
     processor: angular.processInlineTemplates,
-    rules: {
-      curly: "error",
-    },
   },
   {
-    files: ["**/*.html"],
     extends: [
       ...angular.configs.templateRecommended,
       ...angular.configs.templateAccessibility,
-      eslintPluginPrettierRecommended,
+      eslintConfigPrettier,
     ],
+    files: ["**/*.html"],
+  },
+  {
+    rules: {
+      "sort-imports": "error",
+      "sort-keys": "error",
+      "sort-vars": "error",
+    },
   },
 );

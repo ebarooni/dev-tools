@@ -1,31 +1,35 @@
 // @ts-check
 
-const eslint = require("@eslint/js");
-const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
-const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
+const eslintConfigPrettier = require("eslint-config-prettier");
+const tseslint = require("typescript-eslint");
+const typescript = require("typescript");
 
 module.exports = tseslint.config(
   {
-    files: ["**/*.ts"],
     extends: [
-      eslint.configs.recommended,
+      ...typescript,
       ...tseslint.configs.strictTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       ...angular.configs.tsRecommended,
-      eslintPluginPrettierRecommended,
+      eslintConfigPrettier,
     ],
+    files: ["**/*.ts"],
     processor: angular.processInlineTemplates,
-    rules: {
-      curly: "error",
-    },
   },
   {
-    files: ["**/*.html"],
     extends: [
       ...angular.configs.templateRecommended,
       ...angular.configs.templateAccessibility,
-      eslintPluginPrettierRecommended,
+      eslintConfigPrettier,
     ],
+    files: ["**/*.html"],
+  },
+  {
+    rules: {
+      "sort-imports": "error",
+      "sort-keys": "error",
+      "sort-vars": "error",
+    },
   },
 );

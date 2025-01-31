@@ -1,10 +1,10 @@
-# **@ebarooni/prettier-config**
+# @ebarooni/prettier-config
 
-A **shareable Prettier configuration** for JavaScript and web-focused projects.
+A shareable Prettier configuration for JavaScript, TypeScript, and web-focused projects.
 
 ---
 
-## **📌 Prerequisites**
+## Prerequisites
 
 This package requires `prettier` as a peer dependency. If you haven't installed it yet, run:
 
@@ -14,9 +14,9 @@ npm install -D prettier
 
 ---
 
-## **📥 Installation**
+## Installation
 
-To install the package, use:
+To install the package, run:
 
 ```sh
 npm install -D @ebarooni/prettier-config
@@ -24,9 +24,9 @@ npm install -D @ebarooni/prettier-config
 
 ---
 
-## **🚀 Usage**
+## Usage
 
-### **Basic Configuration**
+### Basic Configuration
 
 To apply this Prettier configuration, add the following entry to your `package.json`:
 
@@ -36,9 +36,11 @@ To apply this Prettier configuration, add the following entry to your `package.j
 }
 ```
 
-### **Prettier Scripts**
+---
 
-For convenience, add these commands to your `package.json` scripts:
+## Prettier Scripts
+
+To streamline formatting, add these scripts to your `package.json`:
 
 ```json
 {
@@ -49,6 +51,8 @@ For convenience, add these commands to your `package.json` scripts:
   }
 }
 ```
+
+Run these commands:
 
 - **Check formatting:**
 
@@ -66,9 +70,9 @@ For convenience, add these commands to your `package.json` scripts:
 
 ---
 
-## **🛠 Extending the Configuration**
+## Customizing the Configuration
 
-If you need to **override** or **extend** the default settings, create a `.prettierrc.js` file and modify it as needed:
+If you need to modify the settings, create a `.prettierrc.js` file and extend the configuration:
 
 ```js
 import ebarooniPrettierConfig from "@ebarooni/prettier-config";
@@ -76,23 +80,18 @@ import ebarooniPrettierConfig from "@ebarooni/prettier-config";
 export default {
   ...ebarooniPrettierConfig,
   semi: false, // Example: Disable semicolons
+  tabWidth: 4, // Example: Set tab width to 4 spaces
 };
 ```
 
 ---
 
-## **🚫 Ignoring Files**
+## Ignoring Files
 
-To **exclude specific files or directories** from being formatted by Prettier, add them to a `.prettierignore` file in your project root:
+To exclude files from being formatted by Prettier, create a `.prettierignore` file in the project root:
 
 ```gitignore
 # Ignore markdown files in specific directories
 **/ios/*.md
 **/android/*.md
 ```
-
----
-
-## **📖 License**
-
-This package is licensed under the **MIT License**.

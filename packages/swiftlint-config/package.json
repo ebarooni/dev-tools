@@ -1,7 +1,7 @@
 {
   "name": "@ebarooni/swiftlint-config",
-  "version": "1.2.0",
-  "description": "A shareable SwiftLint configuration for Swift projects",
+  "version": "1.2.1",
+  "description": "A shareable SwiftLint configuration for enforcing Swift code standards",
   "license": "MIT",
   "author": "Ehsan Barooni",
   "homepage": "https://github.com/ebarooni/dev-tools#readme",
@@ -35,7 +35,7 @@
     "node": ">=20.12.2"
   },
   "scripts": {
-    "prepublishOnly": "cp ../../LICENSE.txt . || echo 'License file not found, skipping copy'",
-    "postpublish": "rm -f LICENSE.txt"
+    "prepublishOnly": "cp ../../LICENSE . || echo 'License file not found, skipping copy'",
+    "postpublish": "rm -f LICENSE"
   }
 }
