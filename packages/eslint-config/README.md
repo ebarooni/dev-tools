@@ -1,6 +1,6 @@
 # @ebarooni/eslint-config
 
-A shareable and extensible ESLint configuration for JavaScript, TypeScript, and Angular projects.
+A shareable and extensible ESLint configuration for JavaScript, TypeScript, Angular, Markdown, and JSON projects.
 
 ---
 
@@ -38,7 +38,7 @@ npm install -D @ebarooni/eslint-config
 
 ## Usage
 
-### Base ESLint Configuration (JavaScript)
+### JavaScript ESLint Configuration
 
 For JavaScript projects that don’t use TypeScript:
 
@@ -59,7 +59,7 @@ Then, create `eslint.config.js` or `eslint.config.mjs`:
 import eb from "@ebarooni/eslint-config";
 
 export default {
-  ...eb.configs.base,
+  ...eb.configs.javascript,
   files: ["*.js", "*.mjs"],
   ignores: ["*.html"],
 };
@@ -71,7 +71,7 @@ export default {
 const eb = require("@ebarooni/eslint-config");
 
 module.exports = {
-  ...eb.configs.base,
+  ...eb.configs.javascript,
   files: ["*.js", "*.mjs"],
   ignores: ["*.html"],
 };
@@ -81,7 +81,7 @@ module.exports = {
 
 ### TypeScript ESLint Configuration
 
-For TypeScript projects, extending the **Base configuration**.
+For TypeScript projects, extending the **JavaScript configuration**.
 
 #### ESM Setup
 
@@ -159,6 +159,36 @@ module.exports = tseslint.config(...eb.configs.angular, {
 
 ---
 
+### Markdown ESLint Configuration
+
+To enable linting for Markdown files:
+
+```js
+import eb from "@ebarooni/eslint-config";
+
+export default {
+  ...eb.configs.markdown,
+  files: ["*.md"],
+};
+```
+
+---
+
+### JSON ESLint Configuration
+
+To enable linting for JSON files:
+
+```js
+import eb from "@ebarooni/eslint-config";
+
+export default {
+  ...eb.configs.json,
+  files: ["*.json"],
+};
+```
+
+---
+
 ## Helper Scripts
 
 To simplify linting and fixing errors, add these scripts to your `package.json`:
@@ -215,12 +245,20 @@ import eb from "@ebarooni/eslint-config";
 
 export default [
   {
-    ...eb.configs.base,
+    ...eb.configs.javascript,
     files: ["src/**/*.js"],
   },
   {
     ...eb.configs.typescript,
     files: ["src/**/*.ts"],
+  },
+  {
+    ...eb.configs.markdown,
+    files: ["docs/**/*.md"],
+  },
+  {
+    ...eb.configs.json,
+    files: ["config/**/*.json"],
   },
 ];
 ```

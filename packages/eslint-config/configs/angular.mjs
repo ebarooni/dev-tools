@@ -2,28 +2,16 @@
 
 import angular from "angular-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
-import json from "@eslint/json";
-import markdown from "@eslint/markdown";
-import pluginJs from "@eslint/js";
-import pluginPromise from "eslint-plugin-promise";
 import tseslint from "typescript-eslint";
+import typescript from "./typescript.mjs";
 
 export default tseslint.config(
   {
     extends: [
-      pluginJs.configs.recommended,
-      pluginPromise.configs["flat/recommended"],
-      eslintConfigPrettier,
-    ],
-    files: ["**/*.js", "**/*.cjs", "**/*.mjs", "**/*.jsx"],
-  },
-  {
-    extends: [
-      pluginJs.configs.recommended,
+      ...typescript,
       ...tseslint.configs.strictTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       ...angular.configs.tsRecommended,
-      pluginPromise.configs["flat/recommended"],
       eslintConfigPrettier,
     ],
     files: ["**/*.ts"],
@@ -36,16 +24,6 @@ export default tseslint.config(
       eslintConfigPrettier,
     ],
     files: ["**/*.html"],
-  },
-  {
-    extends: [json.configs.recommended],
-    files: ["**/*.json"],
-    ignores: ["**/package-lock.json"],
-    language: "json/json",
-  },
-  {
-    extends: [markdown.configs.recommended[0]],
-    files: ["**/*.md"],
   },
   {
     rules: {

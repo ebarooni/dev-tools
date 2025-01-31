@@ -2,27 +2,16 @@
 
 const angular = require("angular-eslint");
 const eslintConfigPrettier = require("eslint-config-prettier");
-const json = require("@eslint/json").default;
-const pluginJs = require("@eslint/js");
-const pluginPromise = require("eslint-plugin-promise");
 const tseslint = require("typescript-eslint");
+const typescript = require("typescript");
 
 module.exports = tseslint.config(
   {
     extends: [
-      pluginJs.configs.recommended,
-      pluginPromise.configs["flat/recommended"],
-      eslintConfigPrettier,
-    ],
-    files: ["**/*.js", "**/*.cjs", "**/*.mjs", "**/*.jsx"],
-  },
-  {
-    extends: [
-      pluginJs.configs.recommended,
+      ...typescript,
       ...tseslint.configs.strictTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       ...angular.configs.tsRecommended,
-      pluginPromise.configs["flat/recommended"],
       eslintConfigPrettier,
     ],
     files: ["**/*.ts"],
@@ -35,12 +24,6 @@ module.exports = tseslint.config(
       eslintConfigPrettier,
     ],
     files: ["**/*.html"],
-  },
-  {
-    extends: [json.configs.recommended],
-    files: ["**/*.json"],
-    ignores: ["**/package-lock.json"],
-    language: "json/json",
   },
   {
     rules: {
