@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          sparse-checkout-cone-mode: 'true'
+          sparse-checkout-cone-mode: "true"
           sparse-checkout: packages/stylelint-config
 
       - name: Setup Node.js
