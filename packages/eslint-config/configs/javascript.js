@@ -1,8 +1,8 @@
-const eslintConfigPrettier = require("eslint-config-prettier");
-const pluginJs = require("@eslint/js");
-const pluginPromise = require("eslint-plugin-promise");
+import eslintConfigPrettier from "eslint-config-prettier";
+import pluginJs from "@eslint/js";
+import pluginPromise from "eslint-plugin-promise";
 
-module.exports = [
+export default [
   {
     files: ["**/*.js", "**/*.cjs", "**/*.mjs", "**/*.jsx"],
     ...pluginJs.configs.recommended,

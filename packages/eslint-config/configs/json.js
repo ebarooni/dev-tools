@@ -1,7 +1,7 @@
-const eslintConfigPrettier = require("eslint-config-prettier");
-const json = require("@eslint/json").default;
+import eslintConfigPrettier from "eslint-config-prettier";
+import json from "@eslint/json";
 
-module.exports = {
+export default {
   files: ["**/*.json"],
   ignores: ["**/package-lock.json"],
   language: "json/json",
