@@ -28,11 +28,11 @@
     "index.js",
     "index.mjs"
   ],
-  "peerDependencies": {
-    "swiftlint": "^2.0.0"
-  },
   "engines": {
     "node": ">=20.12.2"
+  },
+  "peerDependencies": {
+    "swiftlint": "^2.0.0"
   },
   "scripts": {
     "prepublishOnly": "cp ../../LICENSE . || echo 'License file not found, skipping copy'",
