@@ -32,5 +32,6 @@ jobs:
       - name: Publish to NPM
         run: npm publish --provenance --access public
         working-directory: ./packages/swiftlint-config
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_CICD }}
