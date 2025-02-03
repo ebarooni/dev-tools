@@ -1,6 +1,7 @@
-const javascript = require("configs/javascript");
-const json = require("configs/json");
-const typescript = require("configs/typescript");
-const angular = require("configs/angular");
+import angular from "./configs/angular.js";
+import javascript from "./configs/javascript.js";
+import json from "./configs/json.js";
+import markdown from "./configs/markdown.js";
+import typescript from "./configs/typescript.js";
 
-module.exports = { angular, javascript, json, typescript };
+export default { angular, javascript, json, markdown, typescript };

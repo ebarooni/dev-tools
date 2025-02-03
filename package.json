@@ -23,6 +23,7 @@
     "typescript",
     "shared-config"
   ],
+  "type": "module",
   "engines": {
     "node": ">=20.12.2"
   },

@@ -1,11 +1,11 @@
 // @ts-check
 
-const angular = require("angular-eslint");
-const eslintConfigPrettier = require("eslint-config-prettier");
-const tseslint = require("typescript-eslint");
-const typescript = require("typescript");
+import angular from "angular-eslint";
+import eslintConfigPrettier from "eslint-config-prettier";
+import tseslint from "typescript-eslint";
+import typescript from "./typescript.js";
 
-module.exports = tseslint.config(
+export default tseslint.config(
   {
     extends: [
       ...typescript,

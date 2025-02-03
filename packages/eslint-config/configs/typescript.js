@@ -1,10 +1,10 @@
 // @ts-check
 
-const eslintConfigPrettier = require("eslint-config-prettier");
-const javascript = require("javascript");
-const tseslint = require("typescript-eslint");
+import eslintConfigPrettier from "eslint-config-prettier";
+import javascript from "./javascript.js";
+import tseslint from "typescript-eslint";
 
-module.exports = tseslint.config(
+export default tseslint.config(
   {
     extends: [
       ...javascript,
